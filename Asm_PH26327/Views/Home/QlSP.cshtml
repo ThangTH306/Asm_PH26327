@@ -1,0 +1,120 @@
+﻿@model IEnumerable<Asm_PH26327.Models.Product>
+
+@{
+    ViewData["Title"] = "QlSP";
+}
+
+<h1>QlSP</h1>
+
+<p>
+    <a asp-action="Createsp">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+           @* <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.SizeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NsxId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ColorId)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nsx)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Size)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                
+                @Html.DisplayNameFor(model => model.availabelQuantity)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Supplier)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descreption)
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Hinhanh)*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            @*@if (@item.availabelQuantity > 5)
+            {*@
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Color)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nsx)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Size)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.availabelQuantity)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.status)
+                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Supplier)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descreption)
+                    </td>
+                    <td>
+@*                        @Html.DisplayFor(modelItem => item.Hinhanh)
+*@                    </td>
+                    <td>
+                        @*@Html.DisplayFor(modelItem => item.Status)*@
+                        @if (item.status == 0)
+                        {
+                            <span>Còn Hàng</span>
+                        }
+                        else
+                        {
+                            <span>Hết Hàng</span>
+                        }
+                    </td>
+                    <td>
+                        @Html.ActionLink("Sửa", "Editsp", new { id=item.id }) |
+                        @Html.ActionLink("Chi Tiết", "Detailssp", new { id=item.id }) |
+                        @Html.ActionLink("Xóa", "Deletesp", new { id=item.id })
+                    </td>
+                </tr>
+            @*}*@
+           
+        }
+        
+    </tbody>
+</table>
