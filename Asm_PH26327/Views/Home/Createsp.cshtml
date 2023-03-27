@@ -1,0 +1,119 @@
+﻿@model Asm_PH26327.Models.Product
+
+@{
+    ViewData["Title"] = "Createsp";
+    Asm_PH26327.Models.ShopDbContext context = new Asm_PH26327.Models.ShopDbContext();
+
+}
+
+<h1>Createsp</h1>
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Createsp" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+@*            <div class="form-group">
+                <label asp-for="id" class="control-label"></label>
+                <input asp-for="id" class="form-control" />
+                <span asp-validation-for="id" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SizeId" class="control-label"></label>
+                <input asp-for="SizeId" class="form-control" />
+                <span asp-validation-for="SizeId" class="text-danger"></span>
+                @*                <label asp-for="SizeId" class="control-label"></label>
+                <select class="form-control" name="SizeId">
+                @foreach (var Size in context.Sizes.ToList())
+                {
+                <option value="@Size.SizeId">@Size.SizeName</option>
+                }
+                </select>*@
+            </div>
+            <div class="form-group">
+                <label asp-for="NsxId" class="control-label"></label>
+                <input asp-for="NsxId" class="form-control" />
+                <span asp-validation-for="NsxId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ColorId" class="control-label"></label>
+                <input asp-for="ColorId" class="form-control" />
+                <span asp-validation-for="ColorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Color" class="control-label"></label>
+                <input asp-for="Color" class="form-control" />
+                <span asp-validation-for="Color" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nsx" class="control-label"></label>
+                <input asp-for="Nsx" class="form-control" />
+                <span asp-validation-for="Nsx" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Size" class="control-label"></label>
+                <input asp-for="Size" class="form-control" />
+                <span asp-validation-for="Size" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="availabelQuantity" class="control-label"></label>
+                <input asp-for="availabelQuantity" class="form-control" />
+                <span asp-validation-for="availabelQuantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @* <label asp-for="status" class="control-label"></label>
+                <input asp-for="status" class="form-control" />
+                <span asp-validation-for="status" class="text-danger"></span>*@
+                <label asp-for="status" class="control-label">Trạng Thái</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Status" id="Status1" value="0" checked>
+                    <label class="form-check-label" for="Status1">
+                        Còn Hàng
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Status" id="Status2" value="1">
+                    <label class="form-check-label" for="Status2">
+                        Hết Hàng
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Supplier" class="control-label"></label>
+                <input asp-for="Supplier" class="form-control" />
+                <span asp-validation-for="Supplier" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descreption" class="control-label"></label>
+                <input asp-for="Descreption" class="form-control" />
+                <span asp-validation-for="Descreption" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @*Không nhập Description nữa mà nhập vào tham số mới là imageFile*@
+                <label>Tải ảnh lên</label>
+                <input type="file" name="imageFile" class="form-control-file" />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+

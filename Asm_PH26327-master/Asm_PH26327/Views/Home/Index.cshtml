@@ -1,0 +1,36 @@
+﻿@model  List<Asm_PH26327.Models.Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Danh Sách Sản Phẩm Trong Shop</h1>
+<div class="QLSP">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3 col-xs-6">
+             <img src="@item.Hinhanh" alt="" style="width: 150px; height=50px">
+                <p class="tensp" style="text-align:center">@item.Name</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="giaspkm">@item.Price đ</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="giasp" style="color: red">@item.Price đ</p>
+                    </div>
+                </div>
+                <div class="b-mua">
+                    <a href="@Url.Action("Detailssp","Product",new { id=item.id })">
+                        <button type="button" class="btn btn-outline-danger">
+                            <i class="bi bi-bag-check"></i>
+                            mua
+                        </button>
+                    </a>
+
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

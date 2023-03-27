@@ -1,0 +1,44 @@
+﻿@model  List<Asm_PH26327.Models.Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<string> imageExtensions = new List<string>()
+    {
+        ".jpg", ".png", ".webp", ".gif", ".pdf", ".tiff", ".jpeg"
+    };
+}
+
+<h1>Danh Sách Sản Phẩm Trong Shop</h1>
+<div class="QLSP">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3 col-xs-12">
+                <center> <img src="~/images/@item.Hinhanh" alt="" style="width: 200px; height:200px"></center>
+                <center><p class="tensp">@item.Name</p></center>
+                <div class="row">
+                    <div class="col-md-6">
+                        <center>  <strong> <p class="Giasp" style="color:red;">@item.Price đ</p></strong></center>
+                    </div>
+                    <div class="col-md-6">
+                        <center> <strong><p class="GiaKm" style="text-decoration:line-through;">@item.Price đ</p></strong></center>
+                    </div>
+                </div>
+                <div class="b-mua">
+                    <a >
+                        <center>
+                            <button type="button" class="btn btn-outline-danger" >
+                                <i class="bi bi-bag-check"></i>
+                                @Html.ActionLink("Mua","AddtoCart",new { id=item.id })
+                            </button>
+                        </center>
+                    </a>
+
+                </div>
+            </div>
+        }
+
+
+    </div>
+
+</div>

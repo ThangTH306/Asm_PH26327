@@ -1,0 +1,45 @@
+﻿@model Asm_PH26327.Models.Size
+
+@{
+    ViewData["Title"] = "Createsz";
+}
+
+<h1>Createsz</h1>
+
+<h4>Size</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Createsz">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+                <label asp-for="SizeId" class="control-label"></label>
+                <input asp-for="SizeId" class="form-control" />
+                <span asp-validation-for="SizeId" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="SizeName" class="control-label"></label>
+                <input asp-for="SizeName" class="form-control" />
+                <span asp-validation-for="SizeName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaSize" class="control-label"></label>
+                <input asp-for="MaSize" class="form-control" />
+                <span asp-validation-for="MaSize" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

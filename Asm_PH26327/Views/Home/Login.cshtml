@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Asm_PH26327.Models.User>
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="col-md-6 col-sm-12">
+    <div class="login-form">
+        <form method="post" asp-controller="Home" asp-action="Login">
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" class="form-control" name="Username">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password">
+            </div>
+            <button type="submit" class="btn btn-black">Login</button>
+            <a asp-controller="Home" asp-action="Register" class="btn btn-danger">Register</a>
+        </form>
+        <h6 class="mt-2">Forgot Password ? <a asp-action="ForgotPassword" class="text-danger">Click Now !</a></h6>
+    </div>
+</div>

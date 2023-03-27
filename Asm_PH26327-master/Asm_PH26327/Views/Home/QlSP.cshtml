@@ -1,0 +1,178 @@
+﻿@model IEnumerable<Asm_PH26327.Models.Product>
+
+@{
+    ViewData["Title"] = "QlSP";
+    Asm_PH26327.Models.ShopDbContext context = new Asm_PH26327.Models.ShopDbContext();
+
+    List<string> imageExtensions = new List<string>()
+    {
+        ".jpg", ".png", ".webp", ".gif", ".pdf", ".tiff", ".jpeg"
+    };
+}
+
+<h1>QlSP</h1>
+
+<p>
+    <a asp-action="Createsp">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+           @* <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.SizeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NsxId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ColorId)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nsx)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Size)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                
+                @Html.DisplayNameFor(model => model.availabelQuantity)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Supplier)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descreption)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hinhanh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            @*@if (@item.availabelQuantity > 5)
+            {*@
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                    @{
+                        Asm_PH26327.Models.Size size = context.Sizes.Find(item.SizeId);
+                        if (size != null)
+                        {
+                            <span>@size.SizeName</span>
+                        }
+                        else
+                        {
+                            <span>Unknown</span>
+                        }
+                    }
+
+                </td>
+                <td>
+                    @{
+                        Asm_PH26327.Models.Nsx nsx = context.Nsxes.Find(item.NsxId);
+                        if (nsx != null)
+                        {
+                            <span>@nsx.Name</span>
+                        }
+                        else
+                        {
+                            <span>Unknown</span>
+                        }
+                    }
+
+                </td>
+                <td>
+                    @{
+                        Asm_PH26327.Models.Color col = context.Colors.Find(item.ColorId);
+                        if (col != null)
+                        {
+                            <span>@col.Name</span>
+                        }
+                        else
+                        {
+                            <span>Unknown</span>
+                        }
+                    }
+
+                </td>
+@*                    <td>
+                        @Html.DisplayFor(modelItem => item.Color)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nsx)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Size)
+                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.availabelQuantity)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.status)
+                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Supplier)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descreption)
+                    </td>
+                    <td>
+                    @{
+                        var extension = System.IO.Path.GetExtension(item.Hinhanh);
+                    }
+                    @if (imageExtensions.Contains(extension))
+                    {
+                        <img src="~/images/@item.Hinhanh" height="80px" width="80px">
+                    }
+                    else
+                    {
+                        <img src="~/images/default.png" height="80px" width="80px">
+                    }
+                </td>
+                    <td>
+                        @*@Html.DisplayFor(modelItem => item.Status)*@
+                        @if (item.status == 0)
+                        {
+                            <span>Còn Hàng</span>
+                        }
+                        else
+                        {
+                            <span>Hết Hàng</span>
+                        }
+                    </td>
+                    <td>
+                        @Html.ActionLink("Sửa", "Editsp", new { id=item.id }) |
+                        @Html.ActionLink("Chi Tiết", "Detailssp", new { id=item.id }) |
+                        @Html.ActionLink("Xóa", "Deletesp", new { id=item.id })
+                    </td>
+                </tr>
+            @*}*@
+           
+        }
+        
+    </tbody>
+</table>

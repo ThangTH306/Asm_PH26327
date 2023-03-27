@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Asm_PH26327.Models.Size>
+
+@{
+    ViewData["Title"] = "Sizes";
+}
+
+<h1>Sizes</h1>
+
+<p>
+    <a asp-action="Createsz">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                @Html.DisplayNameFor(model => model.SizeId)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.SizeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaSize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.SizeId)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.SizeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaSize)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                    @Html.ActionLink("Edit", "Editsz", new { id = item.SizeId }) |
+                @Html.ActionLink("Details", "Detailsz", new { id = item.SizeId }) |
+                    @Html.ActionLink("Delete", "Deletesz", new { id = item.SizeId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
