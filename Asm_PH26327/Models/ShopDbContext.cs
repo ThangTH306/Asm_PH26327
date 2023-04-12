@@ -28,7 +28,11 @@ namespace Asm_PH26327.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+<<<<<<< HEAD
             
+=======
+            ;
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
         }

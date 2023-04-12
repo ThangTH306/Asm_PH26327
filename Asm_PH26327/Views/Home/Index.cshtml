@@ -2,10 +2,13 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+<<<<<<< HEAD
     List<string> imageExtensions = new List<string>()
     {
         ".jpg", ".png", ".webp", ".gif", ".pdf", ".tiff", ".jpeg"
     };
+=======
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
 }
 
 <h1>Danh Sách Sản Phẩm Trong Shop</h1>
@@ -13,6 +16,7 @@
     <div class="row">
         @foreach (var item in Model)
         {
+<<<<<<< HEAD
             <div class="col-md-3 col-xs-12">
                 <center> <img src="~/images/@item.Hinhanh" alt="" style="width: 200px; height:200px"></center>
                 <center><p class="tensp">@item.Name</p></center>
@@ -32,13 +36,36 @@
                                 @Html.ActionLink("Mua","AddtoCart",new { id=item.id })
                             </button>
                         </center>
+=======
+            <div class="col-md-3 col-xs-6">
+             <img src="@item.Hinhanh" alt="" style="width: 150px; height=50px">
+                <p class="tensp" style="text-align:center">@item.Name</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="giaspkm">@item.Price đ</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="giasp" style="color: red">@item.Price đ</p>
+                    </div>
+                </div>
+                <div class="b-mua">
+                    <a href="@Url.Action("Detailssp","Product",new { id=item.id })">
+                        <button type="button" class="btn btn-outline-danger">
+                            <i class="bi bi-bag-check"></i>
+                            mua
+                        </button>
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
                     </a>
 
                 </div>
             </div>
         }
 
+<<<<<<< HEAD
 
     </div>
 
+=======
+    </div>
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
 </div>

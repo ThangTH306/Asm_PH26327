@@ -1,5 +1,8 @@
 ﻿using Asm_PH26327.Models.IServices;
+<<<<<<< HEAD
 using Asm_PH26327.Models;
+=======
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
 
 namespace Asm_PH26327.Models.Services
 {
@@ -29,7 +32,11 @@ namespace Asm_PH26327.Models.Services
         {
             try
             {
+<<<<<<< HEAD
                 var user = context.Users.Find(id);//find chỉ dùng được khi id là khoá chính,dynamic là kiểu dữ liệu- var là từ khoá
+=======
+                dynamic user = context.Users.Find(id);//find chỉ dùng được khi id là khoá chính,dynamic là kiểu dữ liệu- var là từ khoá
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
                 context.Users.Remove(user);
 
                 context.SaveChanges();
@@ -46,6 +53,7 @@ namespace Asm_PH26327.Models.Services
         {
             return context.Users.ToList();
         }
+<<<<<<< HEAD
         public List<User> GetAllUser(Guid roleid)
         {
             return context.Users.Where(c => c.RoleId == roleid).ToList();
@@ -54,6 +62,8 @@ namespace Asm_PH26327.Models.Services
         {
             return context.Users.FirstOrDefault(c => c.Username == email);
         }
+=======
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
 
         public User GetUserById(Guid id)
         {
@@ -73,7 +83,10 @@ namespace Asm_PH26327.Models.Services
                 user.Username = pro.Username;
                 user.Password = pro.Password;
                 user.Status = pro.Status;
+<<<<<<< HEAD
                 user.RoleId = pro.RoleId;
+=======
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
 
 
                 //có thể sửa thêm thuộc tính

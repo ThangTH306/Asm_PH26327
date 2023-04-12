@@ -61,7 +61,11 @@ namespace Asm_PH26327.Models.Services
         {
             try
             {
+<<<<<<< HEAD
                 dynamic pro = context.Products.Find(product.id);
+=======
+                var pro = context.Products.Find(product.id);
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
                 pro.Name = product.Name;
                 pro.Color = product.Color;
                 pro.Nsx = product.Nsx;

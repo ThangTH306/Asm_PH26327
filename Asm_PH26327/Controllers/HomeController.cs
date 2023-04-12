@@ -5,7 +5,10 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Data;
 using System.IO;
+<<<<<<< HEAD
 using Microsoft.CodeAnalysis;
+=======
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
 
 namespace Asm_PH26327.Controllers
 {
@@ -16,10 +19,14 @@ namespace Asm_PH26327.Controllers
         private readonly IColorSerVices colorSerVices;
         private readonly INsxServices nsxServices;
         private readonly ISizeServices sizeServices;
+<<<<<<< HEAD
         private readonly ICartDetailServices cartDetailServices;
         private readonly IUserServices userServices;
         private readonly IRolServices rolServices;
                 
+=======
+       
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -28,9 +35,12 @@ namespace Asm_PH26327.Controllers
             colorSerVices = new ColorServices();
             nsxServices = new NsxServices();
             sizeServices = new SizeService();
+<<<<<<< HEAD
             cartDetailServices = new CartDetailServices();
             userServices = new UserServices();
             rolServices = new RoleServices();
+=======
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
         }
 
         public IActionResult Index()
@@ -40,6 +50,17 @@ namespace Asm_PH26327.Controllers
             //return View();
         }
 
+<<<<<<< HEAD
+=======
+        public IActionResult GioiThieu()
+        {
+            return View();
+        }
+        public IActionResult LienHe()
+        {
+            return View();
+        }
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
         /*--------------------Tạo các sản phẩm-----------------------*/
         public IActionResult Createsp()
         {
@@ -61,6 +82,7 @@ namespace Asm_PH26327.Controllers
         {
             return View();
         }
+<<<<<<< HEAD
         public IActionResult Login()
         {
             return View();
@@ -128,6 +150,10 @@ namespace Asm_PH26327.Controllers
             return RedirectToAction("Index");
         }
 
+=======
+        
+        /*-------------------------------------------------------------*/
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
 
         /*------------------Sản phẩm--------------*/
 
@@ -138,6 +164,7 @@ namespace Asm_PH26327.Controllers
                 return View(products);
             
         }
+<<<<<<< HEAD
 
         // Các ảnh không nằm trong thư mục root khi chạy sẽ không hiển thị
         // ra với các phương thức cơ bản => để hiển thị được ta cần phải
@@ -156,6 +183,11 @@ namespace Asm_PH26327.Controllers
                 // Gán lại giá trị cho thuộc tính Description => Bước 3
                 p.Hinhanh = imageFile.FileName; // Bước 4
             }
+=======
+        [HttpPost]
+        public IActionResult Createsp(Product p)
+        {
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
             if (_productServices.CreateProduct(p))
             {
                 return RedirectToAction("QlSP");
@@ -179,6 +211,7 @@ namespace Asm_PH26327.Controllers
         public IActionResult Editsp(Guid id)
         {
             var product = _productServices.GetProductById(id);
+<<<<<<< HEAD
             var products = SessionServices.GetObjectFromSession(HttpContext.Session, "History");
             var existingProduct = products.FirstOrDefault(p => p.id == id);
             if (products.Count == 0)
@@ -209,6 +242,11 @@ namespace Asm_PH26327.Controllers
             return View(product);
         }
         public IActionResult Editsp(Product p, IFormFile imageFile)
+=======
+            return View(product);
+        }
+        public IActionResult Editsp(Product p)
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
         {
             var Products = _productServices.GetProductById(p.id);
             if (p.Price < 1)
@@ -226,6 +264,7 @@ namespace Asm_PH26327.Controllers
                 ModelState.AddModelError("", "Số Lượng phải lớn hơn 1");
                 return View();
             }
+<<<<<<< HEAD
             if (imageFile != null && imageFile.Length > 0) // Không null không rỗng
             {
                 // Thực hiện trỏ tới thư mục root để lát thực hiện việc copy
@@ -238,6 +277,8 @@ namespace Asm_PH26327.Controllers
                 // Gán lại giá trị cho thuộc tính Description => Bước 3
                 p.Hinhanh = imageFile.FileName; // Bước 4
             }
+=======
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
             if (_productServices.UpdateProduct(p))
             {
                 return RedirectToAction("QLSP");
@@ -396,6 +437,7 @@ namespace Asm_PH26327.Controllers
             }
             return BadRequest();
         }
+<<<<<<< HEAD
         /*-------------------------------Session--------------------------------*/
 
         [HttpPost]
@@ -510,6 +552,14 @@ namespace Asm_PH26327.Controllers
             var product = SessionCart.GetObjectFromSession(HttpContext.Session, "Cart");
             return View(product);
         }
+=======
+        /*---------------------------------------------------------------------*/
+
+        /*---------------------------------------------------------------------*/
+
+        /*---------------------------------------------------------------------*/
+
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

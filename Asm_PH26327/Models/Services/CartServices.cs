@@ -42,6 +42,7 @@ namespace Asm_PH26327.Models.Services
             }
         }
 
+<<<<<<< HEAD
         public List<Cart> GetCart(string name)
         {
             //return context.Carts.Where(pro => pro.Decreption.Contains(name)).ToList();
@@ -50,12 +51,24 @@ namespace Asm_PH26327.Models.Services
         }
 
         public List<Cart> GetAllCart()
+=======
+        public List<Cart> get(string name)
+        {
+            return context.Carts.Where(pro => pro.Decreption.Contains(name)).ToList();
+        }
+
+        public List<Cart> GetAllRoles()
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
         {
             return context.Carts.ToList();
 
         }
 
+<<<<<<< HEAD
         public Cart GetGetAllCartById(Guid id)
+=======
+        public Cart GetRoleById(Guid id)
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
         {
             return context.Carts.FirstOrDefault(pro => pro.UserId == id);
         }

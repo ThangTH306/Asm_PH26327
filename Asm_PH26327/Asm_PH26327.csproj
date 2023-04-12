@@ -20,9 +20,12 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
   </ItemGroup>
 
+<<<<<<< HEAD
   <ItemGroup>
     <Folder Include="Views\CartDetail\" />
     <Folder Include="Views\User\" />
   </ItemGroup>
 
+=======
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
 </Project>

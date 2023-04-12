@@ -70,7 +70,11 @@ namespace Asm_PH26327.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+<<<<<<< HEAD
                     Email = table.Column<string>(type: "varchar(256)", nullable: false),
+=======
+                    IdSp = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
                     Username = table.Column<string>(type: "varchar(256)", nullable: false),
                     Password = table.Column<string>(type: "varchar(256)", nullable: false),
                     RoleId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),

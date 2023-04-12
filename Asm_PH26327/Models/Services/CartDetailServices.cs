@@ -1,5 +1,8 @@
 ﻿using Asm_PH26327.Models.IServices;
+<<<<<<< HEAD
 using Microsoft.EntityFrameworkCore;
+=======
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
 
 namespace Asm_PH26327.Models.Services
 {
@@ -52,11 +55,16 @@ namespace Asm_PH26327.Models.Services
             return context.CartDetails.ToList();
         }
 
+<<<<<<< HEAD
         public List<CartDetail> GetCartDetailByName(Guid id)
+=======
+        public List<CartDetail> GetCartDetailByName(string name)
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
         {
             throw new NotImplementedException();
         }
 
+<<<<<<< HEAD
         public bool UpdateDetail(CartDetail carts, Guid idproduct)
         {
             try
@@ -68,6 +76,16 @@ namespace Asm_PH26327.Models.Services
                 ca.IdSp = carts.IdSp;
                 ca.UserId = carts.UserId;
 
+=======
+        public bool UpdateDetail(CartDetail carts)
+        {
+            try
+            {
+                var ca = context.CartDetails.Find(carts.id);
+                ca.id = carts.id;
+                ca.Quantity = carts.Quantity;
+                ca.Product = carts.Product;
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
 
 
                 //có thể sửa thêm thuộc tính
@@ -79,8 +97,11 @@ namespace Asm_PH26327.Models.Services
             {
                 return false;
             }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
         }
     }
 }

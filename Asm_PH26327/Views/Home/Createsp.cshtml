@@ -2,8 +2,11 @@
 
 @{
     ViewData["Title"] = "Createsp";
+<<<<<<< HEAD
     Asm_PH26327.Models.ShopDbContext context = new Asm_PH26327.Models.ShopDbContext();
 
+=======
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
 }
 
 <h1>Createsp</h1>
@@ -12,6 +15,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
+<<<<<<< HEAD
         <form asp-action="Createsp" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 @*            <div class="form-group">
@@ -19,6 +23,15 @@
                 <input asp-for="id" class="form-control" />
                 <span asp-validation-for="id" class="text-danger"></span>
             </div>*@
+=======
+        <form asp-action="Createsp">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="id" class="control-label"></label>
+                <input asp-for="id" class="form-control" />
+                <span asp-validation-for="id" class="text-danger"></span>
+            </div>
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
@@ -28,6 +41,7 @@
                 <label asp-for="SizeId" class="control-label"></label>
                 <input asp-for="SizeId" class="form-control" />
                 <span asp-validation-for="SizeId" class="text-danger"></span>
+<<<<<<< HEAD
                 @*                <label asp-for="SizeId" class="control-label"></label>
                 <select class="form-control" name="SizeId">
                 @foreach (var Size in context.Sizes.ToList())
@@ -35,6 +49,8 @@
                 <option value="@Size.SizeId">@Size.SizeName</option>
                 }
                 </select>*@
+=======
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
             </div>
             <div class="form-group">
                 <label asp-for="NsxId" class="control-label"></label>
@@ -72,6 +88,7 @@
                 <span asp-validation-for="availabelQuantity" class="text-danger"></span>
             </div>
             <div class="form-group">
+<<<<<<< HEAD
                 @* <label asp-for="status" class="control-label"></label>
                 <input asp-for="status" class="form-control" />
                 <span asp-validation-for="status" class="text-danger"></span>*@
@@ -88,6 +105,11 @@
                         Hết Hàng
                     </label>
                 </div>
+=======
+                <label asp-for="status" class="control-label"></label>
+                <input asp-for="status" class="form-control" />
+                <span asp-validation-for="status" class="text-danger"></span>
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
             </div>
             <div class="form-group">
                 <label asp-for="Supplier" class="control-label"></label>
@@ -100,11 +122,18 @@
                 <span asp-validation-for="Descreption" class="text-danger"></span>
             </div>
             <div class="form-group">
+<<<<<<< HEAD
                 @*Không nhập Description nữa mà nhập vào tham số mới là imageFile*@
                 <label>Tải ảnh lên</label>
                 <input type="file" name="imageFile" class="form-control-file" />
             </div>
 
+=======
+                <label asp-for="Hinhanh" class="control-label"></label>
+                <input asp-for="Hinhanh" class="form-control" />
+                <span asp-validation-for="Hinhanh" class="text-danger"></span>
+            </div>
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
@@ -116,4 +145,7 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a

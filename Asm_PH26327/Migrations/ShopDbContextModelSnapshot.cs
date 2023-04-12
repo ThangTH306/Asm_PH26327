@@ -177,10 +177,13 @@ namespace Asm_PH26327.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+<<<<<<< HEAD
                     b.Property<string>("Hinhanh")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+=======
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(100)");
@@ -277,6 +280,12 @@ namespace Asm_PH26327.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+<<<<<<< HEAD
+=======
+                    b.Property<Guid>("IdSp")
+                        .HasColumnType("uniqueidentifier");
+
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("varchar(256)");
@@ -297,7 +306,11 @@ namespace Asm_PH26327.Migrations
 
                     b.HasIndex("RoleId");
 
+<<<<<<< HEAD
                     b.ToTable("Users");
+=======
+                    b.ToTable("User");
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
                 });
 
             modelBuilder.Entity("Asm_PH26327.Models.BilDetail", b =>

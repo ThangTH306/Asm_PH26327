@@ -2,16 +2,20 @@
 
 @{
     ViewData["Title"] = "QlSP";
+<<<<<<< HEAD
     Asm_PH26327.Models.ShopDbContext context = new Asm_PH26327.Models.ShopDbContext();
     List<string> imageExtensions = new List<string>()
     {
         ".jpg", ".png", ".webp", ".gif", ".pdf", ".tiff", ".jpeg"
     };
+=======
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
 }
 
 <h1>QlSP</h1>
 
 <p>
+<<<<<<< HEAD
     <a asp-action="Createsp">
         <button type="button" class="btn btn-info">
             <i class="bi bi-pencil-square"> Thêm</i>
@@ -25,6 +29,9 @@
     <button class="btn btn-info"><a asp-action="Sizes">Create size</a></button>
 
 
+=======
+    <a asp-action="Createsp">Create New</a>
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
 </p>
 <table class="table">
     <thead>
@@ -35,7 +42,11 @@
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
+<<<<<<< HEAD
 @*            <th>
+=======
+            @*<th>
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
                 @Html.DisplayNameFor(model => model.SizeId)
             </th>
             <th>
@@ -45,13 +56,21 @@
                 @Html.DisplayNameFor(model => model.ColorId)
             </th>*@
             <th>
+<<<<<<< HEAD
                 @Html.DisplayNameFor(model => model.Size)
+=======
+                @Html.DisplayNameFor(model => model.Color)
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Nsx)
             </th>
             <th>
+<<<<<<< HEAD
                 @Html.DisplayNameFor(model => model.Color)
+=======
+                @Html.DisplayNameFor(model => model.Size)
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Price)
@@ -68,7 +87,11 @@
                 @Html.DisplayNameFor(model => model.Descreption)
             </th>
             <th>
+<<<<<<< HEAD
                 @Html.DisplayNameFor(model => model.Hinhanh)
+=======
+                @*@Html.DisplayNameFor(model => model.Hinhanh)*@
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.status)
@@ -86,6 +109,7 @@
                         @Html.DisplayFor(modelItem => item.Name)
                     </td>
                     <td>
+<<<<<<< HEAD
                     @{
                         Asm_PH26327.Models.Size size = context.Sizes.Find(item.SizeId);
                         if (size != null)
@@ -126,21 +150,35 @@
                    
                 </td>
     @*            <td>
+=======
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
                         @Html.DisplayFor(modelItem => item.Color)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Nsx)
                     </td>
+<<<<<<< HEAD
                 <td>
                     @Html.DisplayFor(modelItem => item.Size)
                 </td>*@
+=======
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Size)
+                    </td>
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
                     <td>
                         @Html.DisplayFor(modelItem => item.Price)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.availabelQuantity)
                     </td>
+<<<<<<< HEAD
  
+=======
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.status)
+                    </td>*@
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
                     <td>
                         @Html.DisplayFor(modelItem => item.Supplier)
                     </td>
@@ -148,6 +186,7 @@
                         @Html.DisplayFor(modelItem => item.Descreption)
                     </td>
                     <td>
+<<<<<<< HEAD
                     @{
                         var extension = System.IO.Path.GetExtension(item.Hinhanh);
                     }
@@ -189,5 +228,30 @@
                 </tr>           
         }
 
+=======
+@*                        @Html.DisplayFor(modelItem => item.Hinhanh)
+*@                    </td>
+                    <td>
+                        @*@Html.DisplayFor(modelItem => item.Status)*@
+                        @if (item.status == 0)
+                        {
+                            <span>Còn Hàng</span>
+                        }
+                        else
+                        {
+                            <span>Hết Hàng</span>
+                        }
+                    </td>
+                    <td>
+                        @Html.ActionLink("Sửa", "Editsp", new { id=item.id }) |
+                        @Html.ActionLink("Chi Tiết", "Detailssp", new { id=item.id }) |
+                        @Html.ActionLink("Xóa", "Deletesp", new { id=item.id })
+                    </td>
+                </tr>
+            @*}*@
+           
+        }
+        
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
     </tbody>
 </table>

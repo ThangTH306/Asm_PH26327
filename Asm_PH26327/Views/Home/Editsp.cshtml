@@ -10,6 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
+<<<<<<< HEAD
         <form asp-action="Editsp" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             @*<div class="form-group">
@@ -17,11 +18,21 @@
             <input asp-for="id" class="form-control" />
             <span asp-validation-for="id" class="text-danger"></span>
             </div>*@
+=======
+        <form asp-action="Editsp">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="id" class="control-label"></label>
+                <input asp-for="id" class="form-control" />
+                <span asp-validation-for="id" class="text-danger"></span>
+            </div>
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
+<<<<<<< HEAD
             @*  <div class="form-group">
             <label asp-for="SizeId" class="control-label"></label>
             <input asp-for="SizeId" class="form-control" />
@@ -37,6 +48,23 @@
             <input asp-for="ColorId" class="form-control" />
             <span asp-validation-for="ColorId" class="text-danger"></span>
             </div>*@
+=======
+            <div class="form-group">
+                <label asp-for="SizeId" class="control-label"></label>
+                <input asp-for="SizeId" class="form-control" />
+                <span asp-validation-for="SizeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NsxId" class="control-label"></label>
+                <input asp-for="NsxId" class="form-control" />
+                <span asp-validation-for="NsxId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ColorId" class="control-label"></label>
+                <input asp-for="ColorId" class="form-control" />
+                <span asp-validation-for="ColorId" class="text-danger"></span>
+            </div>
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
             <div class="form-group">
                 <label asp-for="Color" class="control-label"></label>
                 <input asp-for="Color" class="form-control" />
@@ -78,9 +106,15 @@
                 <span asp-validation-for="Descreption" class="text-danger"></span>
             </div>
             <div class="form-group">
+<<<<<<< HEAD
                 @*Không nhập Description nữa mà nhập vào tham số mới là imageFile*@
                 <label>Tải ảnh lên</label>
                 <input type="file" name="imageFile" class="form-control-file" />
+=======
+                <label asp-for="Hinhanh" class="control-label"></label>
+                <input asp-for="Hinhanh" class="form-control" />
+                <span asp-validation-for="Hinhanh" class="text-danger"></span>
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
@@ -92,9 +126,12 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+<<<<<<< HEAD
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
+=======
+>>>>>>> a80c7644f75ede78d6f33356cfae309531897b0a
 
